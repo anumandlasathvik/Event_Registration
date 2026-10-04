@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Registration</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: lightblue; }
+    form { background: white; width: 300px; margin: auto; padding: 20px; }
+    input, select { width: 90%; margin: 8px; padding: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Event Registration Form</h2>
+
+  <form onsubmit="register(event)">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone" required>
+    <select required>
+      <option value="">Select Event</option>
+      <option>Hackathon</option>
+      <option>Robotics</option>
+    </select>
+    <button type="submit">Register</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    function register(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      document.getElementById("msg").innerText = "Registered successfully, " + name + "!";
+    }
+  </script>
+
+</body>
+</html>
